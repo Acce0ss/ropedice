@@ -18,7 +18,7 @@ Page {
     property bool diceIsThrown: false
     property int lastDiceMax: 0
 
-    function roll_dices (max) {
+    function roll_dice (max) {
 
         root.lastDiceMax = max
 
@@ -92,7 +92,7 @@ Page {
 
             Slider {
                 id: nod
-                label: "Number of dices"
+                label: "Number of dice"
                 minimumValue: 1
                 maximumValue: 10
                 stepSize: 1
@@ -113,7 +113,7 @@ Page {
 
                     delegate: Button {
                         text: "D" + modelData
-                        onClicked: roll_dices(modelData)
+                        onClicked: roll_dice(modelData)
                         width: base.button_width
                     }
                 }
@@ -129,7 +129,7 @@ Page {
 
                 Button {
                     text: "D" + custom_dice.text
-                    onClicked: roll_dices(custom_dice.text)
+                    onClicked: roll_dice(custom_dice.text)
                     width: base.button_width
                 }
             }

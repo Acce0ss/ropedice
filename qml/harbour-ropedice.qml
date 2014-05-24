@@ -15,7 +15,7 @@ ApplicationWindow
 {
     id: base
 
-    property string program_name: "Rope dices"
+    property string program_name: "Rope dice"
 
     property int button_width: width * (3 / 7)
 
@@ -34,7 +34,7 @@ ApplicationWindow
             coverThrowEnabled: mainPage.diceIsThrown
 
             onRequestThrow: {
-                mainPage.roll_dices(mainPage.lastDiceMax);
+                mainPage.roll_dice(mainPage.lastDiceMax);
             }
 
         }

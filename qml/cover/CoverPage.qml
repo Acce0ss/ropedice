@@ -35,7 +35,7 @@ CoverBackground {
 
         CoverAction {
 
-            iconSource: "/usr/share/icons/hicolor/86x86/apps/harbour-ropedices.png"
+            iconSource: "/usr/share/icons/hicolor/86x86/apps/harbour-ropedice.png"
             onTriggered: root.requestThrow()
         }
     }
