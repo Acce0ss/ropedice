@@ -14,13 +14,16 @@ import Sailfish.Silica 1.0
 Page {
     id: root
 
-    property string lastThrow: ""
-    property bool diceIsThrown: false
-    property int lastDiceMax: 0
+    Connections {
+      target: base
+      onCoverRequestedThrow: {
+        roll_dice(base.lastDiceMax);
+      }
+    }
 
     function roll_dice (max) {
 
-        root.lastDiceMax = max
+        base.lastDiceMax = max
 
         var sum = 0
         var all_rolls = " "
@@ -36,12 +39,12 @@ Page {
             }
         }
         result.text = sum
-        root.lastThrow = nod.sliderValue + "d" + max + ": " + sum
+        base.lastThrow = nod.sliderValue + "d" + max + ": " + sum
         dice_rolls.text = all_rolls
 
-        if(root.diceIsThrown === false)
+        if(base.diceIsThrown === false)
         {
-            root.diceIsThrown = true
+            base.diceIsThrown = true
         }
 
         return 0
